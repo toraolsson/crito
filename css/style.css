@@ -7,6 +7,10 @@ html, body {
   font-weight: 400;
 }
 
+body {
+  min-width: 467px;
+}
+
 h5 {
   font-weight: 600;
   font-size: 1, 2rem;
@@ -26,6 +30,7 @@ p {
   padding: 12px 25px;
   font-weight: 600;
   border-radius: 25px;
+  transition: background-color 0.2s ease-in-out;
 }
 .btn-yellow i {
   margin-left: 8px;
@@ -45,6 +50,7 @@ p {
   padding: 12px 25px;
   font-weight: 600;
   border-radius: 25px;
+  transition: background-color 0.2s ease-in-out;
 }
 .btn-black i {
   margin-left: 1em;
@@ -92,6 +98,7 @@ h1 {
   padding: 12px 25px;
   font-weight: 600;
   border-radius: 25px;
+  transition: background-color 0.2s ease-in-out;
 }
 .btn-transparent i {
   margin-left: 8px;
@@ -106,6 +113,7 @@ h1 {
 header {
   background-color: #F0EFE9;
   display: flex;
+  justify-content: center;
   padding: 16px;
   position: fixed;
   z-index: 2;
@@ -166,6 +174,7 @@ header .container .menu .top-menu .social-media a {
   color: #191919;
   font-size: 1.3rem;
   margin-left: 5px;
+  transition: color 0.2s ease-in-out;
 }
 header .container .menu .top-menu .social-media a:hover {
   color: #7c7c7c;
@@ -391,6 +400,7 @@ header .container .menu .main-menu nav a:hover {
   min-width: 50px;
   background-color: white;
   margin-left: 2em;
+  transition: background-color 0.2s ease-in-out;
 }
 .about-company-section .about-company .round-button:hover {
   background-color: #F9D783;
@@ -437,6 +447,7 @@ header .container .menu .main-menu nav a:hover {
   min-width: 240px;
   border: none;
   padding: 3em;
+  transition: background-color 0.3s ease-in-out;
 }
 .our-services-section .our-services .boxes .box:hover {
   background-color: #F9D783;
@@ -643,54 +654,55 @@ header .container .menu .main-menu nav a:hover {
   padding-bottom: 3em;
 }
 
-.article-and-news {
-  padding-left: 10%;
-  padding-right: 10%;
+.container .article-intro {
+  padding-top: 4em;
   padding-bottom: 3em;
 }
-.article-and-news .article-intro {
-  padding-top: 4em;
+.container .article-intro .text {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
 }
-.article-and-news .article-intro .text {
-  display: flex;
-  gap: 10rem;
-}
-@media (max-width: 660px) {
-  .article-and-news .article-intro .text {
-    gap: 1rem;
-  }
-}
-@media (max-width: 700px) {
-  .article-and-news .article-intro .text {
+@media (max-width: 830px) {
+  .container .article-intro .text {
     display: block;
+    padding-left: 8%;
   }
 }
-.article-and-news .article-intro .text .btn-transparent {
+.container .article-intro .text .btn-transparent {
   margin-top: 2em;
   padding: 8px 3em;
   white-space: nowrap;
 }
-.article-and-news .grid-container {
+.container .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 3em;
+  margin-top: 2em;
   gap: 20px;
-  align-items: center;
-  justify-content: center;
 }
-@media (max-width: 660px) {
-  .article-and-news .grid-container {
+@media (max-width: 840px) {
+  .container .grid-container {
     grid-template-columns: auto;
   }
 }
-.article-and-news .grid-container .item img {
+.container .grid-container .image-container {
+  position: relative;
+}
+.container .grid-container .image-container .date-item {
+  position: absolute;
+  background-color: #F9D783;
+  height: 50px;
+  width: 50px;
+  top: 20px;
+  left: 20px;
+  padding-left: 11px;
+}
+.container .grid-container .item img {
   max-width: 100%;
   padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
 }
-.article-and-news .grid-container .item p, .article-and-news .grid-container h5 {
+.container .grid-container .item p, .container .grid-container h5 {
   padding-bottom: 0.6em;
 }
 
@@ -752,55 +764,71 @@ header .container .menu .main-menu nav a:hover {
 }
 
 footer {
+  position: relative;
+}
+footer .footer {
   background-color: #0E1021;
   color: white;
   display: flex;
   flex-direction: column;
   padding-bottom: 2em;
+  position: relative;
 }
-footer .container p {
+footer .footer .design-extra {
+  position: absolute;
+  height: 20%;
+  bottom: 89px;
+  right: 0;
+}
+@media (max-width: 775px) {
+  footer .footer .design-extra {
+    display: none;
+  }
+}
+footer .footer .container p {
   color: rgb(170, 170, 170);
 }
-footer .grid-child h5, footer img {
+footer .footer .grid-child h5, footer .footer img {
   margin-bottom: 1.5em;
 }
-footer .grid-child p:hover, footer a:hover {
+footer .footer .grid-child p:hover, footer .footer a:hover {
   color: #F9D783;
 }
-footer .grid-parent {
+footer .footer .grid-parent {
   margin-top: 5em;
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   gap: 4em;
 }
 @media (max-width: 1000px) {
-  footer .grid-parent {
+  footer .footer .grid-parent {
     grid-template-columns: auto auto auto;
   }
 }
 @media (max-width: 700px) {
-  footer .grid-parent {
+  footer .footer .grid-parent {
     grid-template-columns: auto auto;
   }
 }
 @media (max-width: 435px) {
-  footer .grid-parent {
+  footer .footer .grid-parent {
     grid-template-columns: auto;
   }
 }
-footer .absolute-bottom {
+footer .footer .absolute-bottom {
   border-top: 1px solid #656565;
   margin-top: 5rem;
 }
-footer .absolute-bottom .container {
+footer .footer .absolute-bottom .container {
   display: flex;
   justify-content: space-between;
   margin-top: 2.5em;
 }
-footer .absolute-bottom .container .icons {
+footer .footer .absolute-bottom .container .icons {
   color: white;
   margin-left: 1em;
+  transition: color 0.2s ease-in-out;
 }
-footer .absolute-bottom .container .icons:hover {
+footer .footer .absolute-bottom .container .icons:hover {
   color: #F9D783;
 }

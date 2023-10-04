@@ -7,6 +7,10 @@ html, body {
   font-weight: 400;
 }
 
+body {
+  min-width: 435px;
+}
+
 h1 {
   font-weight: 700;
   color: black;
@@ -47,6 +51,7 @@ p {
   padding: 12px 25px;
   font-weight: 600;
   border-radius: 25px;
+  transition: background-color 0.2s ease-in-out;
 }
 .btn-yellow i {
   margin-left: 8px;
@@ -121,6 +126,7 @@ header .container .menu .top-menu .social-media a {
   color: #191919;
   font-size: 1.3rem;
   margin-left: 5px;
+  transition: color 0.2s ease-in-out;
 }
 header .container .menu .top-menu .social-media a:hover {
   color: #7c7c7c;
@@ -142,6 +148,7 @@ header .container .menu .main-menu nav a:hover {
 }
 
 .contact-intro {
+  position: relative;
   background-color: #F0EFE9;
   padding-top: 200px;
   padding-bottom: 3em;
@@ -149,6 +156,18 @@ header .container .menu .main-menu nav a:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.contact-intro .background-lines {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  height: 45%;
+}
+@media (max-width: 600px) {
+  .contact-intro .background-lines {
+    display: none;
+  }
 }
 .contact-intro #p, .contact-intro a {
   display: flex;
@@ -245,55 +264,71 @@ header .container .menu .main-menu nav a:hover {
 }
 
 footer {
+  position: relative;
+}
+footer .footer {
   background-color: #0E1021;
   color: white;
   display: flex;
   flex-direction: column;
   padding-bottom: 2em;
+  position: relative;
 }
-footer .container p {
+footer .footer .design-extra {
+  position: absolute;
+  height: 20%;
+  bottom: 89px;
+  right: 0;
+}
+@media (max-width: 775px) {
+  footer .footer .design-extra {
+    display: none;
+  }
+}
+footer .footer .container p {
   color: rgb(170, 170, 170);
 }
-footer .grid-child h5, footer img {
+footer .footer .grid-child h5, footer .footer img {
   margin-bottom: 1.5em;
 }
-footer .grid-child p:hover, footer a:hover {
+footer .footer .grid-child p:hover, footer .footer a:hover {
   color: #F9D783;
 }
-footer .grid-parent {
+footer .footer .grid-parent {
   margin-top: 5em;
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   gap: 4em;
 }
 @media (max-width: 1000px) {
-  footer .grid-parent {
+  footer .footer .grid-parent {
     grid-template-columns: auto auto auto;
   }
 }
 @media (max-width: 700px) {
-  footer .grid-parent {
+  footer .footer .grid-parent {
     grid-template-columns: auto auto;
   }
 }
 @media (max-width: 435px) {
-  footer .grid-parent {
+  footer .footer .grid-parent {
     grid-template-columns: auto;
   }
 }
-footer .absolute-bottom {
+footer .footer .absolute-bottom {
   border-top: 1px solid #656565;
   margin-top: 5rem;
 }
-footer .absolute-bottom .container {
+footer .footer .absolute-bottom .container {
   display: flex;
   justify-content: space-between;
   margin-top: 2.5em;
 }
-footer .absolute-bottom .container .icons {
+footer .footer .absolute-bottom .container .icons {
   color: white;
   margin-left: 1em;
+  transition: color 0.2s ease-in-out;
 }
-footer .absolute-bottom .container .icons:hover {
+footer .footer .absolute-bottom .container .icons:hover {
   color: #F9D783;
 }

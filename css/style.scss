@@ -8,6 +8,10 @@ html, body{
     font-weight: 400;
 }
 
+body{
+    min-width: 467px;
+}
+
 h5{
     font-weight: 600;
     font-size: 1,2rem;
@@ -27,6 +31,7 @@ p{
     padding: 12px 25px;
     font-weight: 600;
     border-radius: 25px;
+    transition: background-color 0.2s ease-in-out;
 
     i{
         margin-left: 8px;
@@ -51,6 +56,7 @@ p{
     padding: 12px 25px;
     font-weight: 600;
     border-radius: 25px;
+    transition: background-color 0.2s ease-in-out;
 
     i{
         margin-left: 1em;
@@ -99,6 +105,8 @@ h1{
     padding: 12px 25px;
     font-weight: 600;
     border-radius: 25px;
+    transition: background-color 0.2s ease-in-out;
+
 
     i{
         margin-left: 8px;
@@ -116,6 +124,7 @@ h1{
 header {
     background-color: #F0EFE9;
     display: flex;
+    justify-content: center;
     padding: 16px;
     position: fixed;
     z-index: 2;
@@ -181,6 +190,8 @@ header {
                         color: #191919;
                         font-size: 1.3rem;
                         margin-left: 5px;
+                        transition: color 0.2s ease-in-out;
+
 
                         &:hover{
                             color: #7c7c7c;
@@ -195,14 +206,15 @@ header {
                 justify-content: space-between;
                 align-items: center;
                 padding-top:19px;
+                
 
                 nav{
                     a{
                         color: #191919;
-                        margin-right: 30px;                                font-weight: 500;
+                        margin-right: 30px;                                
                         font-weight: 500;
-
-
+                        font-weight: 500;
+                        
                         &:hover{
                             text-decoration: underline;
                         }
@@ -426,15 +438,13 @@ header {
             justify-content:space-around;
             gap: 30px;
              
-        
-                 .round-button{
+                 .round-button {
                     border-radius: 25px;
                     min-height: 50px;
                     min-width: 50px;
                     background-color: white;
                     margin-left: 2em;
-
-                    
+                    transition: background-color 0.2s ease-in-out;
                     
                     &:hover{
                         background-color: #F9D783;
@@ -486,6 +496,8 @@ header {
             min-width: 240px;
             border: none;
             padding: 3em;
+            transition: background-color 0.3s ease-in-out;
+
 
             &:hover{
                 background-color: #F9D783;
@@ -497,6 +509,7 @@ header {
 }
 
 .why-choose-us-section{
+   
     .why-choose-us {
     padding-top: 3em;
     padding-bottom: 3em;
@@ -720,33 +733,25 @@ header {
         }
 }
 
-.article-and-news{ 
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 3em;
-    
+.container{ 
+
     .article-intro{
         padding-top: 4em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-       
-
+        padding-bottom: 3em;
         .text{
             display: flex;
-            gap: 10rem;
-            @media (max-width: 660px) { 
-                gap: 1rem;
-            }
-            @media (max-width: 700px) { 
-                display: block;
+            justify-content: space-between;
+
+            @media (max-width: 830px) { 
+                display: block; 
+                padding-left: 8%;
             }
 
             .btn-transparent{
                 margin-top: 2em;
                 padding:  8px 3em;
                 white-space: nowrap;     
-                
+               
             }
         }
     }
@@ -754,19 +759,34 @@ header {
     .grid-container{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        margin-top: 3em;
+        margin-top: 2em;
         gap: 20px;
-        align-items: center;
-        justify-content: center;
 
-        @media (max-width: 660px) { 
-            grid-template-columns: auto;
-                
+        @media (max-width: 840px) { 
+            grid-template-columns: auto; 
+        }
+
+        .image-container{
+            position: relative;
+
+            .date-item{
+                position: absolute;
+                background-color: #F9D783;
+                height: 50px;
+                width: 50px;
+                top: 20px;
+                left: 20px;
+                padding-left: 11px; 
+            }
+            
         }
 
      .item img{
         max-width: 100%;    
         padding-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        
      }
         
      .item p, h5{
@@ -805,8 +825,6 @@ header {
         justify-content: center;
     }
 
-  
-
     .links{
         display: flex;
         gap: 20px;
@@ -840,11 +858,25 @@ header {
 }
 
 footer{
-    background-color: #0E1021;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 2em;
+    position: relative;
+    .footer{
+        background-color: #0E1021;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 2em;
+        position: relative;
+        .design-extra{
+            position: absolute;
+            height: 20%;
+            bottom: 89px;            
+            right: 0;
+
+            @media (max-width: 775px) { 
+                display: none;
+
+            }
+        }
 
     .container p{
         color: rgb(170, 170, 170);
@@ -852,6 +884,7 @@ footer{
         
     .grid-child h5, img{
         margin-bottom: 1.5em;
+
     }
 
     .grid-child p, a{
@@ -865,19 +898,18 @@ footer{
         display: grid;
         grid-template-columns: auto auto auto auto auto; 
         gap: 4em;
-
         
-    @media (max-width: 1000px) { 
-        grid-template-columns:  auto auto auto; 
-    }
-    @media (max-width: 700px) { 
-        grid-template-columns:  auto auto; 
-    }
-    @media (max-width: 435px) { 
-        grid-template-columns:  auto; 
+        @media (max-width: 1000px) { 
+            grid-template-columns:  auto auto auto; 
+        }
+        @media (max-width: 700px) { 
+            grid-template-columns:  auto auto; 
+        }
+        @media (max-width: 435px) { 
+            grid-template-columns:  auto; 
 
     }
-    }
+}
     .absolute-bottom{
         border-top: 1px solid #656565;
         margin-top: 5rem;
@@ -890,19 +922,21 @@ footer{
             .icons{
                 color: white;
                 margin-left: 1em;
+                transition: color 0.2s ease-in-out;
+
                 &:hover{
                     color: #F9D783;
-                    ;
+                    
                 }
             }
         }
         }
     }
+}   
 
    
+    
 
-    
-    
 
 
 
